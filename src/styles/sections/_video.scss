@@ -1,0 +1,324 @@
+.video {
+  background: url("./../img/categories/cat-bg.png") 100% 100% repeat;
+  .container {
+    position: relative;
+    padding-top: 320px;
+    @media (max-width: 1060px) {
+      padding-top: 265px;
+    }
+    @media (max-width: 562px) {
+      padding-top: 965px;
+    }
+  }
+  &__title {
+
+  }
+  &__slider-wrapper {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 70px;
+  }
+  &__slider {
+    width: calc(100% + 30px);
+    height: 405px;
+    overflow: hidden;
+    .slick-list {
+      padding: 0 !important;
+    }
+    .slick-list>.slick-track>.slick-slide {
+      margin-right: 30px;
+    }
+  }
+  &__slider-item {
+    width: 400px;
+    height: 100%;
+  }
+  &__slider-img {
+    width: 100%;
+    height: 242px;
+    position: relative;
+    margin-bottom: 10px;
+  }
+  &__slider-play {
+    border: none;
+    background-color: $green;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    transform: translateY(50%);
+    i {
+      font-size: 22px;
+      line-height: 50px;
+      color: $white;
+    }
+    &:hover {
+      background-color: $white;
+      i {
+        color: $green;
+      }
+    }
+  }
+  &__slider-title {
+    font: 700 16px Roboto;
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding: 0 10px 0 60px;
+  }
+  &__slider-text {
+    width: 100%;
+    max-height: 5.3em;
+    overflow: hidden;
+    display: inline-block; 
+    display: -webkit-box; 
+    -webkit-line-clamp: 5;  
+    -webkit-box-orient: vertical;
+    margin-bottom: 35px;
+    padding: 0 10px 0 60px;
+    @include firefox-only {
+      max-height: 5.5em;
+    }
+  }
+  &__stripe {
+    width: calc(100% - 60px);
+    height: 4px;
+    display: flex;
+    position: absolute;
+    bottom: 60px;
+    left: 30px;
+    z-index: 0;
+    background-color: $green;
+    &--left {
+      height: 100%;
+      width: calc(100% - 210px);
+      background-color: $green;
+    }
+    &--right {
+      height: 100%;
+      width: 210px;
+      background-color: $lightGray;
+    }
+    @media (max-width: 630px) {
+      &--left {
+        width: 50%;
+      }
+      &--right {
+        width: 50%;
+      }
+    }
+  }
+  &__slider-paginator {
+    width: 30px;
+    height: 30px;
+    border: 2px solid $green;
+    background-color: $white;
+    position: absolute;
+    bottom: 32px;
+    right: 180px + 30px;
+    z-index: 1;
+    transform: translate(-50%, -50%) rotateZ(45deg);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    @media (max-width: 630px) {
+      right: 50%;
+      transform: translate(50%, -50%) rotateZ(45deg);
+    }
+  }
+  &__slider-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 19px 19px 19px 0;
+    border-color: transparent $white transparent transparent;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    i {
+      font-size: 30px;
+      font-weight: 400;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+    &--left {
+      left: 0;
+      transform: translate(-16%, -33%) rotateZ(-45deg);
+      i {
+        transform: translate(51%, -53%);
+      }
+    }
+    &--right {
+      right: 0;
+      transform: translate(17%, -68%) rotateZ(135deg);
+      i {
+        transform: translate(51%, -47%) rotateZ(180deg);
+      }
+    }
+    &:hover {
+      border-color: transparent $green transparent transparent;
+      i {
+        color: $white;
+      }
+    }
+  }
+}
+
+.order {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 100%;
+  position: absolute;
+  top: -92px;
+  left: 30px;
+  @media (max-width: 346px) {
+    left: 15px;
+  }
+  &__img-wrapper {
+    height: 368px;
+    width: 484px;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      height: 68px;
+      width: 68px;
+      border-left: 6px solid $green;
+      border-top: 6px solid $green;
+    }
+    @media (max-width: 1060px) {
+      display: none;
+    }
+  }
+  &__instruction {
+    height: 320px;
+    width: calc(100% - 484px - 60px);
+    padding-top: 40px;
+    background-color: $white;
+    box-shadow: 15px 14px 27px -20px $gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    @media (max-width: 1060px) {
+      width: calc(100% - 60px);
+    }
+    @media (max-width: 562px) {
+      height: auto;
+      flex-direction: column;
+    }
+    @media (max-width: 346px) {
+      width: calc(100% - 30px);
+    }
+  }
+  &__title {
+    font: 700 36px Cuprum;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 41px;
+    @media (max-width: 420px) {
+      width: 95%;
+      margin: 0 auto;
+    }
+  }
+  &__item {
+    width: calc(100% / 3);
+    padding: 20px;
+    position: relative;
+    &--light {
+      .order__item-text {
+        color: $lightGray;
+      }
+      .order__item-arrow {
+        border-color: $lightGray;
+        i {
+          color: $lightGray;
+        }
+      }
+    }
+    @media (max-width: 562px) {
+      width: 100%;
+    }
+  }
+  &__item-img {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 30px;
+    img {
+      object-fit: contain;
+    }
+    @media (max-width: 562px) {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  &__item-text {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    padding: 0 5px;
+    @media (max-width: 562px) {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    @media (max-width: 361px) {
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+  &__item-arrow {
+    width: 30px;
+    height: 30px;
+    background-color: $white;
+    border: 2px solid $green;
+    position: absolute;
+    bottom: 14px;
+    left: -30px;
+    z-index: 1;
+    transform: translate(50%, -50%) rotateZ(45deg);
+    transition: all 0.3s ease-in-out;
+    i {
+      font-size: 20px;
+      font-weight: 100;
+      color: $green;
+      position: absolute;
+      top: 54%;
+      left: 47%;
+      z-index: 20;
+      transform: translate(-37%, -58%) rotateZ(-45deg);
+      max-height: 5.3em;
+      @include firefox-only {
+        transform: translate(-47%, -66%) rotateZ(-45deg);
+      }
+    }
+    @media (max-width: 562px) {
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%) rotateZ(135deg);
+    }
+  }
+  &__item-shadow {
+    position: absolute;
+    bottom: 1px;
+    right: 0;
+    height: 80%;
+    width: 20px;
+  }
+  &__shadow {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    @media (max-width: 1060px) {
+      display: none;
+    }
+  }
+}

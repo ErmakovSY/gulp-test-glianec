@@ -1,0 +1,136 @@
+body {
+  position: relative;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: $black;
+  line-height: 1.1;
+  overflow-x: hidden;
+  &.hidden {
+      overflow: hidden;
+  }
+}
+
+button,
+input[type='submit'] {
+  cursor: pointer;
+  @include transition(0.3s);
+  background: transparent;
+  border: 1px solid $gray;
+  &:focus,
+  &:active {
+      outline: none;
+  }
+}
+
+p {
+  cursor: default;
+}
+
+a {
+  text-decoration: none;
+  color: $gray;
+  cursor: pointer;
+  @include transition(0.3s);
+  &:hover {
+      text-decoration: none;
+  }
+}
+
+ul li {
+  list-style: none;
+}
+
+.section {
+  &__title {
+    font: 700 36px Cuprum;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+}
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  max-width: 1230px;
+  padding: 0 30px;
+  margin: 0 auto;
+  &--header {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @media (max-width: 346px) {
+    padding: 0 15px;
+  }
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 192px;
+  height: 32px;
+  border: 1px solid transparent;
+  background-color: $green;
+  text-transform: uppercase;
+  color: $white;
+  font: 400 18px Cuprum;
+  line-height: 20px;
+  &:before {
+    content: '';
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    background-color: $lightGreen;
+    @include transition(0.3s);
+  }
+  &:after {
+    content: '';
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: $darkGreen;
+    @include transition(0.3s);
+  }
+  &:hover {
+    color: $green;
+    border-color: $green;
+    background-color: $white;
+    &:before, &:after, img  {
+      display: none;
+    }
+  }
+  img {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+  }
+  @media (max-width: 900px) {
+    font-size: 16px;
+  }
+}
+
+.phone {
+  font: 400 26px Cuprum;
+  white-space: nowrap;
+  @media (max-width: 950px) {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  @media (max-width: 612px) {
+    margin-bottom: 10px;
+  }
+}
